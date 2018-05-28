@@ -1,0 +1,6 @@
+- name: System Details
+  hosts: myserver
+  tasks:
+    - name: Hello Message
+      debug:
+        msg: "Hello World!"
