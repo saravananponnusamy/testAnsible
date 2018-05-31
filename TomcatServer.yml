@@ -1,0 +1,11 @@
+---
+- name: Test Remote server!
+  hosts: all
+
+  tasks:
+
+  - name: Stop Tomcat server
+    command: /opt/tomcat/apache-tomcat-8.5.31/bin/catalina.sh stop
+
+  - name: Start Tomcat server
+    command: /opt/tomcat/apache-tomcat-8.5.31/bin/catalina.sh Start
