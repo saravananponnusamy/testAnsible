@@ -1,0 +1,16 @@
+---
+- name: run the playbook tasks on the localhost
+  hosts: localhost
+  tasks:
+
+  - name: Copy war file to Tomcat deploy location
+    copy:
+       src: /opt/artifact/sample.war
+       dest: /opt/tomcat/apache-tomcat-8.5.31/webapps
+       mode: 0644
+
+  - name: Stop the Tomcat server
+    command: /opt/tomcat/apache-tomcat-8.5.31/bin/shutdown.sh
+
+  - name: Start the Tomcat server
+    command: /opt/tomcat/apache-tomcat-8.5.31/bin/startup.sh
